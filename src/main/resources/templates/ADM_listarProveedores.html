@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADM Lista proveedores</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/filtro.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <nav>
+            <div class="sidebar-top">
+                <span class="expand-btn">
+                    <img src="/img/chevron.svg" alt="Chevron">
+                </span>
+                <img src="/img/egg solutions blanco.png" class="logo" alt="Laplace Logo">
+                <h3 class="hide">Panel Administrativo</h3>
+            </div>
+            <div class="sidebar-links">
+                <ul>
+                    <li sec:authorize="hasRole('ADMIN')">
+                        <a href="/admin/usuarios" class="active" title="Portfolio link">
+                            <div class="icon">
+                                <img src="/img/portfolio.svg" title="Portfolio Icon">
+                            </div>
+                            <span class="link hide">Usuarios</span>
+                        </a>
+                    </li>
+                  
+                    <li>
+                        <a href="#dashboard" title="Performance link">
+                            <div class="icon">
+                                <img src="/img/dashboard.svg" title="Performance Icon">
+                            </div>
+                            <span class="link hide">Comentarios</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/logout" title="Reports Link">
+                            <div class="icon">
+                                <img src="/img/desconectar.png" title="Reports Icon">
+                            </div>
+                            <span class="link hide">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="contenedor2">
+            <div class="input-container">
+                <span class="titulo">
+                    Listado de Proveedores
+                </span>
+            </div>
+            
+            <div class="tabla-filtro">
+                <input type="text" id="filtro" placeholder="Buscar...">
+
+                <table class="zigzag">
+                    <thead>
+                        <tr>
+                            <th class="header">Nombre</th>
+                            <th class="header">Profesión</th>
+                            <th class="header">Calificación</th>
+                            <th class="header">Estado</th>
+                            <th class="header" style="width: auto">Foto Perfil</th>
+                            <th class="header">Habilitar/Deshabilitar</th>
+                            <th class="header">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody   id="tabla-body" >
+                        <tr th:each="proveedor : ${proveedores}" style="height: 1vh; width: 1px">
+                            <td scope="row" th:text="${proveedor.nombre}">Nombre</td>
+                            <td th:text="${proveedor.profesion}">Profesión</td>
+                            <td th:text="${proveedor.calificacion}">Estrellas</td>
+                            <td th:text="${proveedor.alta}">Estado</td>
+                            <td>
+                                <div class=" col-md-7 ">
+                                    <img th:src="@{'/proveedor/imagen/' + ${proveedor.id}}" class="float-left ml-1" style="width: 100px;">
+                                </div>
+                            </td>
+                            <td>
+                                <button class="botond desactivar">
+                                    <span class="btn-txtd">Activar/Desactivar</span>
+                                </button>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/filtro.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+
+<head>
+    <title>Modificacion perfil</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/formulario.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+
+<body>
+    <div>Modificar Proveedor</div>
+
+
+    <div>
+
+<!--        <form class="form"  method="POST" th:action="@{'/proveedor/modificacionPerfil/' + ${proveedor.id}}" nctype="multipart/form-data">-->
+            <!--                                       <input th:value="${id}" hidden name="id">-->
+            <form class="form" th:action="@{/proveedor/modificacionPerfil/{id}(id=${proveedor.id})}" method="POST"
+      enctype="multipart/form-data">
+
+    <!-- Resto del formulario -->
+
+            
+            <span class="signup">Registro de proveedor</span>
+            <label class="palabrainput" style="font-size: 12px;" for="nombre">Nombre</label>
+            <input type="text" th:value="${proveedor.nombre}" name="nombre" required placeholder="Nombre"
+                class="form--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="apellido">Apellido</label>
+            <input type="text" th:value="${proveedor.apellido}" name="apellido" required placeholder="Apellido"
+                class="form--input">
+
+
+            <input type="hidden" name="rol" required placeholder="Rol" class="form--input" value="PROVEEDOR">
+
+            <label class="palabrainput" style="font-size: 12px;" for="email">Correo electrónico</label>
+            <input type="email" th:value="${proveedor.email}" name="email" required placeholder="Correo electrónico" class="form--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="usuario">Nombre de usuario</label>
+            <input type="text" th:value="${proveedor.usuario}" name="usuario" required placeholder="Nombre de usuario" class="form--input">
+
+
+            <label class="palabrainput" style="font-size: 12px;" for="documento">Número de DNI</label>
+            <input type="text" th:value="${proveedor.documento}" name="documento" required placeholder="Número de DNI"
+                class="form--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="contactoTelefonico">Número de Teléfono</label>
+            <input type="text" th:value="${proveedor.contactoTelefonico}" name="contactoTelefonico" required
+                placeholder="Número de Teléfono" class="form--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="certificado">Certificación</label>
+            <select name="certificado" th:value="${proveedor.certificado}" id="certificado" class="form--input"
+                required>
+                <option value="">Seleccione una opcion</option>
+                <option value="true" th:selected="${proveedor.certificado == true}">Estoy matriculado</option>
+                <option value="false" th:selected="${proveedor.certificado == false}">No estoy matriculado</option>
+            </select>
+
+            <label class="palabrainput" style="font-size: 12px;" for="disponibilidadHoraria">Disponibilidad
+                horaria</label>
+            <select name="disponibilidadHoraria" th:value="${proveedor.disponibilidadHoraria}"
+                id="disponibilidadHoraria" class="form--input" required>
+                <option value="">Seleccione un horario</option>
+                <option value="manana" th:selected="${proveedor.disponibilidadHoraria == 'manana'}">Por la mañana
+                </option>
+                <option value="tarde" th:selected="${proveedor.disponibilidadHoraria == 'tarde'}">Por la tarde</option>
+                <option value="noche" th:selected="${proveedor.disponibilidadHoraria == 'noche'}">Por la noche</option>
+                <option value="todo-el-dia" th:selected="${proveedor.disponibilidadHoraria == 'todo-el-dia'}">Durante
+                    todo el día</option>
+            </select>
+
+
+
+            <label class="palabrainput" style="font-size: 12px;" for="profesion">Profesión</label>
+            <select th:value="${proveedor.profesion}" name="profesion" id="profesion" class="form--input" required>
+                <option value="">Seleccione una profesión</option>
+                <option value="REFRIGERACION" th:selected="${proveedor.profesion.name() == 'REFRIGERACION'}">Técnico de aire acondicionado</option>
+                <option value="ALBANIL" th:selected="${proveedor.profesion.name() == 'ALBANIL'}">Albañil</option>
+                <option value="ARQUITECTO" th:selected="${proveedor.profesion.name() == 'ARQUITECTO'}">Arquitecto</option>
+                <option value="CARPINTERO" th:selected="${proveedor.profesion.name() == 'CARPINTERO'}">Carpintero</option>
+                <option value="ELECTRICISTA" th:selected="${proveedor.profesion.name() == 'ELECTRICISTA'}">Electricista</option>
+                <option value="GASISTA" th:selected="${proveedor.profesion.name() == 'GASISTA'}">Gasista</option>
+                <option value="JARDINERO" th:selected="${proveedor.profesion.name() == 'JARDINERO'}">Jardinero</option>
+                <option value="MECANICO" th:selected="${proveedor.profesion.name() == 'MECANICO'}">Mecánico</option>
+                <option value="PINTOR" th:selected="${proveedor.profesion.name() == 'PINTOR'}">Pintor</option>
+                <option value="PLOMERO" th:selected="${proveedor.profesion.name() == 'PLOMERO'}">Plomero</option>
+            </select>
+
+            <div class="subirimagen">
+                <span class="subirimagen-title">Cargá una foto tuya</span>
+                <p class="subirimagen-paragraph">
+                    Solo formato .jpg
+                </p>
+                <label for="archivo" class="drop-container">
+                    <div id="image-preview-container">
+
+<!--                        <img style="width: 150px; border-radius: 20px;" id="image-preview"
+                            th:src="@{'/proveedor/imagen/' + ${proveedor.id}}"  alt="Vista previa de la imagen">-->
+                            <img style="width: 150px; border-radius: 20px;" id="image-preview" th:src="@{'/proveedor/imagen/' + ${proveedor.id}}" alt="Vista previa de la imagen">
+<
+                    </div>
+                        <input type="file" class="form-control" name="archivo">
+
+                </label>
+            </div>
+
+<!--                    <input type="file" accept="image/*" name="archivo" id="file-input" required>   th:field="${proveedor.imagen.id}"-->
+            <label class="palabrainput" style="font-size: 12px;" for="password">Ingrese contraseña</label>
+            <input type="password" name="password" required placeholder="Ingrese contraseña" class="form--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="password2">Repetir contraseña</label>
+            <input type="password" name="password2" required placeholder="Repetir contraseña" class="form--input">
+
+            <button class="form--submit">
+                Guardar
+            </button>
+
+        </form>
+
+    </div>
+   
+
+    <div th:replace="/fragments/exito:: div"></div>
+
+    <div th:replace="/fragments/error :: div"></div>
+
+
+    <div th:replace="/fragments/bootstrap_script :: script"></div>
+
+
+    
+
+</body>
+
+</html>

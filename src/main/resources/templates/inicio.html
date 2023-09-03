@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/tablaUsuario.css" />
+  </head>
+
+  <body>
+    <div th:replace="/fragments/casa:: div"></div>
+    <nav th:replace="/fragments/menu:: nav"></nav>
+
+    <div class="section">
+      <div class="contenedorInput">
+        <div
+          class="input__container input__container--variant"
+          style="max-width: 150px; text-align: center"
+        >
+          <div class="shadow__input shadow__input--variant"></div>
+          <a href="#seccion2">
+            <input
+              type="text"
+              name="text"
+              class="input__search input__search--variant"
+              placeholder="Contratá acá!!"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="fancy" style="--w: 50vw; --c: #f73859; --b: 4px; --g: 40px">
+      <p
+        class=""
+        th:if="${session.usuariosession != null}"
+        th:text=" 'Hola de vuelta '+ ${session.usuariosession.nombre} "
+      ></p>
+    </h2>
+    <br />
+
+    <div id="seccion2" class="contenedorNosotros">
+      <div class="filaNosotros" style="font-size: 18px">
+        <div class="columnaNosotros">
+          <img src="./img/paso1.png" alt="Imagen 1" />
+          <h3 class="h3Nosotros">1 - Dinos que necesitas</h3>
+          <p class="pNosotros">
+            Cuéntanos sobre tu necesidad y nosotros lo pondremos a disposición
+            de profesionales recomendados que te ayudarán a hacerlo realidad.
+          </p>
+        </div>
+        <div class="columnaNosotros">
+          <img src="./img/paso2.png" alt="Imagen 1" />
+          <h3 class="h3Nosotros">2 - Recibe multiples propuestas</h3>
+          <p class="pNosotros">
+            En pocas horas recibirás las propuestas solicitadas. Conversa y
+            evacúa dudas a través de nuestro chat. Compara reputación,
+            experiencia y presupuestos.
+          </p>
+        </div>
+        <div class="columnaNosotros">
+          <img src="./img/paso3.png" alt="Imagen 1" />
+          <h3 class="h3Nosotros">3 - Elige</h3>
+          <p class="pNosotros">
+            Cuando tengas toda la información, contrata de manera directa y
+            abona sin intermediarios ni sobrecostos.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="fancy" style="--w: 50vw; --c: #f73859; --b: 4px; --g: 40px">
+      Elegí un servicio
+    </h2>
+
+    <div class="SuperContenedorBotones">
+      <div class="section">
+        <div class="icon-row">
+          <div class="icon-col">
+            <button class="botonIcono">
+              <img class="profesiones" src="./img/arquitecto3.png" alt="" />
+              <br />
+              <i style="font-size: 18px"
+                ><a href="/proveedor/lista/ARQUITECTO">Arquitectos</a></i
+              >
+            </button>
+          </div>
+          <div class="icon-col">
+            <button class="botonIcono">
+              <img class="profesiones" src="./img/aire3.png" alt="" />
+              <br />
+              <i style="font-size: 18px; white-space: nowrap"
+                ><a href="/proveedor/lista/REFRIGERACION">Técnicos a/a</a></i
+              >
+            </button>
+          </div>
+          <div class="icon-col">
+            <button class="botonIcono">
+              <img class="profesiones" src="./img/albanil3.png" alt="" />
+              <br />
+              <i style="font-size: 18px"
+                ><a href="/proveedor/lista/ALBANIL">Albañiles</a></i
+              >
+            </button>
+          </div>
+          <div class="icon-col">
+            <button class="botonIcono">
+              <img class="profesiones" src="./img/carpintero3.png" alt="" />
+              <br />
+              <i style="font-size: 18px"
+                ><a href="/proveedor/lista/CARPINTERO">Carpinteros</a></i
+              >
+            </button>
+          </div>
+          <div class="icon-col">
+            <button class="botonIcono">
+              <img class="profesiones" src="./img/electricista3.png" alt="" />
+              <br />
+              <i style="font-size: 18px"
+                ><a href="/proveedor/lista/ELECTRICISTA">Electricistas</a></i
+              >
+            </button>
+          </div>
+        </div>
+        <div class="icon-row">
+          <div class="icon-col">
+            <button class="botonIcono">
+              <img class="profesiones" src="./img/gas3.png" alt="" />
+              <br />
+              <i style="font-size: 18px"
+                ><a href="/proveedor/lista/GASISTA">Gasistas</a></i
+              >
+            </button>
+          </div>
+          <div class="icon-col">
+            <button class="botonIcono">
+              <img class="profesiones" src="./img/jardineria3.png" alt="" />
+              <br />
+              <i style="font-size: 18px"
+                ><a href="/proveedor/lista/JARDINERO">Jardineros</a></i
+              >
+            </button>
+          </div>
+          <div class="icon-col">
+            <button class="botonIcono">
+              <img class="profesiones" src="./img/mecanico3.png" alt="" />
+              <br />
+              <i style="font-size: 18px"
+                ><a href="/proveedor/lista/MECANICO">Mecánicos</a></i
+              >
+            </button>
+          </div>
+          <div class="icon-col">
+            <button class="botonIcono">
+              <img class="profesiones" src="./img/pintor3.png" alt="" />
+              <br />
+              <i style="font-size: 18px"
+                ><a href="/proveedor/lista/">Pintores</a></i
+              >
+            </button>
+          </div>
+          <div class="icon-col">
+            <button class="botonIcono">
+              <img class="profesiones" src="./img/plomero3.png" alt="" />
+              <br />
+              <i style="font-size: 18px"
+                ><a href="/proveedor/lista/PLOMERO">Plomeros</a></i
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="fancy" style="--w: 50vw; --c: #f73859; --b: 4px; --g: 40px">
+      Mis contratos
+    </h2>
+    <br />
+
+    <div class="contenedorNosotros">
+      <div class="tabla-filtro">
+        <input type="text" id="filtro" placeholder="Buscar..." />
+      </div>
+      <div class="table-container">
+        <table class="zigzag">
+          <thead>
+            <tr>
+              <th class="header">Número de contrato</th>
+              <th class="header">Nombre Proveedor</th>
+              <th class="header">Tipo de Proveedor</th>
+              <th class="header">Estado</th>
+              <!--EN CURSO O FINALIZADO-->
+              <th class="header">Cancelar</th>
+              <!--SE BLOQUEA UNA VEZ FINALIZADO-->
+              <th class="header">Finalizar</th>
+              <!--HABILITADO HASTA QUE SE CANCELE O FINALICE-->
+            </tr>
+          </thead>
+          <tbody
+            th:each="proveedor : ${proveedores}"
+            style="height: 1vh; width: 1px"
+          >
+            <tr>
+              <td scope="row" th:text="${proveedor.nombre}">ID</td>
+              <td th:text="${proveedor.profesion}">Nombre Proveedor</td>
+              <td th:text="${proveedor.calificacion}">Tipo Proveedor</td>
+              <td th:text="${proveedor.calificacion}">Estado</td>
+              <td>
+                <button class="botond">
+                  <span class="btn-txtd">Cancelar</span>
+                </button>
+              </td>
+              <td>
+                <button id="openModal">Finalizar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="emergente-calificacion">
+            <div class="table-container-calificacion">
+              <table class="tablaCalificacion">
+                <thead>
+                  <tr>
+                    <th class="header">COMENTARIO</th>
+                    <th class="header">Calificar</th>
+                  </tr>
+                </thead>
+                <tbody style="height: 1vh; width: 1px">
+                  <tr>
+                    <td scope="row">
+                      <textarea
+                        rows="8"
+                        cols="30"
+                        id="descripcion_servicio"
+                        name="descripcion_servicio"
+                        required
+                      ></textarea>
+                    </td>
+                    <td>
+                      <div class="rating">
+                        <input
+                          value="star-1"
+                          name="star-radio"
+                          id="star-1"
+                          type="radio"
+                        />
+                        <label for="star-1">
+                          <svg
+                            viewBox="0 0 36 36"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                              pathLength="360"
+                            ></path>
+                          </svg>
+                        </label>
+                        <input
+                          value="star-1"
+                          name="star-radio"
+                          id="star-2"
+                          type="radio"
+                        />
+                        <label for="star-2">
+                          <svg
+                            viewBox="0 0 36 36"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                              pathLength="360"
+                            ></path>
+                          </svg>
+                        </label>
+                        <input
+                          value="star-1"
+                          name="star-radio"
+                          id="star-3"
+                          type="radio"
+                        />
+                        <label for="star-3">
+                          <svg
+                            viewBox="0 0 36 36"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                              pathLength="360"
+                            ></path>
+                          </svg>
+                        </label>
+                        <input
+                          value="star-1"
+                          name="star-radio"
+                          id="star-4"
+                          type="radio"
+                        />
+                        <label for="star-4">
+                          <svg
+                            viewBox="0 0 36 36"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                              pathLength="360"
+                            ></path>
+                          </svg>
+                        </label>
+                        <input
+                          value="star-1"
+                          name="star-radio"
+                          id="star-5"
+                          type="radio"
+                        />
+                        <label for="star-5">
+                          <svg
+                            viewBox="0 0 36 36"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                              pathLength="360"
+                            ></path>
+                          </svg>
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button class="botone">
+              <span class="btn-txte">Aceptar</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div th:replace="/fragments/footer:: div"></div>
+
+    <script src="./js/filtro.js"></script>
+    <script src="./js/carrusel.js"></script>
+    <script src="./js/tablaUsuario.js"></script>
+    <script src="./js/estrellas.js"></script>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificacion de usuario</title>
+    <link rel="stylesheet" href="/css/formulario.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+
+<body>
+
+    <div th:replace="./fragments/casa:: div"></div>
+
+
+    <div class="mensaje">
+        <div th:if="${error != null}" class="card text-white bg-danger mb-3 mensajeError">
+            <div class="card-body-error">
+                <h5 class="card-title">Error!</h5>
+                <p class="card-text" th:text="${error}"></p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="contenedorregistro">
+
+
+        <form class="form" th:action="@{/usuario/modificacionPerfil/{id}(id=${usuario.id})}" method="POST" enctype="multipart/form-data">
+
+            <span class="signup">Registro de Usuario</span>
+            <label class="palabrainput" style="font-size: 12px;" for="nombre">Nombre</label>
+            <input type="text" th:value="${usuario.nombre}" name="nombre" required placeholder="Nombre" class="form--input">
+            <label class="palabrainput" style="font-size: 12px;" for="apellido">Apellido</label>
+            <input type="text" th:value="${usuario.apellido}" name="apellido" required placeholder="Apellido" class="form--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="email">Correo electrónico</label>
+            <input type="email" th:value="${usuario.email}" name="email" required placeholder="Correo electrónico" class="form--input">
+
+            <input type="hidden" name="rol" required placeholder="Rol" class="form--input" value="USER">
+
+            <label class="palabrainput" style="font-size: 12px;" for="usuario">Nombre de usuario</label>
+            <input type="text" th:value="${usuario.usuario}" name="usuario" required placeholder="Nombre de usuario" class="form--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="documento">Número de DNI</label>
+            <input type="number" th:value="${usuario.documento}" name="documento" required placeholder="Número de DNI" class="form--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="contactoTelefonico">Número de Teléfono</label>
+            <input type="text" th:value="${usuario.contactoTelefonico}" name="contactoTelefonico" required placeholder="Número de Teléfono"
+                class="form--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="disponibilidadHoraria">Disponibilidad
+                horaria</label>
+
+            <select name="disponibilidadHoraria" th:value="${usuario.disponibilidadHoraria}" id="tipo-juego" class="form--input" required>
+                <option value="">Seleccione un horario</option>
+                <option value="manana"th:selected="${usuario.disponibilidadHoraria == 'manana'}">Por la mañana</option>
+                <option value="tarde" th:selected="${usuario.disponibilidadHoraria == 'tarde'}">Por la tarde</option>
+                <option value="noche" th:selected="${usuario.disponibilidadHoraria == 'noche'}">Por la noche</option>
+                <option value="todo-el-dia" th:selected="${usuario.disponibilidadHoraria == 'todo-el-dia'}">Durante todo el día</option>
+            </select>
+
+            <div class="subirimagen">
+                <span class="subirimagen-title">Cargá una foto tuya</span>
+                <p class="subirimagen-paragraph">
+                    Solo formato .jpg
+                </p>
+                <label for="archivo" class="drop-container">
+                    <div id="image-preview-container">
+                        <img style="width: 150px; border-radius: 20px;" id="image-preview" th:src="@{'/usuario/imagen/' + ${usuario.id}}"
+                            alt="Vista previa de la imagen">
+                    </div>
+                    <input name="archivo" type="file" accept="image/*"  id="file-input">
+                </label>
+            </div>
+
+
+            <label class="palabrainput" style="font-size: 12px;" for="password">Ingrese contraseña</label>
+            <input type="password" name="password" required placeholder="Ingrese contraseña" class="form--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="password2">Repetir contraseña</label>
+            <input type="password" name="password2" required placeholder="Repetir contraseña" class="form--input">
+
+
+            <button class="form--submit" id="myButton">
+                Registrar
+            </button>
+
+            <!-- <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <br>
+                    <h2>Registro Exitoso</h2>
+                    <br>
+                    <button class="Exito"><a href="inicio.html">Cerrar </a></button>
+                </div>
+            </div> -->
+
+        </form>
+
+    </div>
+
+
+
+
+
+
+    <div th:replace="/fragments/exito:: div"></div>
+
+    <div th:replace="/fragments/error :: div"></div>
+
+    <div th:replace="/fragments/bootstrap_script :: script"></div>
+
+    <script src="./js/formularioFotos.js"></script>
+
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><span></span></label>
+    <label for="active" class="close"></label>
+    <div class="wrapper">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Contratá un servicio</a></li>
+            <li><a href="">Sos usuario?</a></li>
+            <li><a href="/login">Logueate</a></li>
+            <li><a href="">Registrate</a></li>
+            <li><a href="index.html"><img style="width: 80px;" src="./img/egg solutions f73859.png" alt=""></a></li>
+
+        </ul>
+    </div>
+
+    </div>
+
+    <div th:replace="/fragments/footer:: div"></div>
+
+
+
+    <div th:replace="/fragments/menu:: div"></div>
+
+    <script src="./js/footer.js"></script>
+    <script src="./js/formularioFotos.js"></script>
+    <script src="./js/formularios.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,116 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contrato</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/contrato.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+</head>
+
+<body>
+
+    <div>
+        <div th:replace="/fragments/casa:: div"></div>
+        <nav th:replace="/fragments/menu:: nav"></nav>
+        
+<br><br>
+        <h2 class="fancy" style="--w: 50vw;--c: #f73859;--b:4px;--g: 40px">Contrato de Servicios</h2>
+
+        <br><br>
+
+        <h2 class="titulo">¡Gracias por elegir nuestro servicio! Para comenzar el proceso de contratación, por favor
+            completa el
+            siguiente
+            formulario con la información requerida:</h2>
+
+        <p class="texto">¿Tienes alguna necesidad o requisito especial que debamos tener en cuenta al proporcionar el
+            servicio? Ingrésala
+            en la descripcion del servicio.</p>
+
+
+        <div id="seccion2" class="contenedorregistro">
+            <br>
+            <form class="formRegistro">
+                <label for="nombre_cliente">Nombre del Cliente:</label>
+                <input type="text" id="nombre_cliente" name="nombre_cliente" value="Usuario Logueado" readonly required>
+
+                <br><br>
+
+                <label for="nombre_proveedor">Nombre del Proveedor:</label>
+                <input type="text" id="nombre_proveedor" name="nombre_proveedor" value="Proveedor Seleccionado" readonly
+                    required>
+                <br><br>
+
+                <label for="descripcion_servicio">Descripción del Servicio:</label>
+                <textarea rows="10" cols="45" id="descripcion_servicio" name="descripcion_servicio" required></textarea>
+                <br><br>
+
+                <label for="barrio">Barrio</label>
+                <select name="barrio" id="barrio" class="formRegistro--input" style="height: 40px; width: 45%;">
+                    <option value="" disabled selected>Seleccione un Barrio</option>
+                    <option>San Isidro Country Club</option>
+                    <option>Cañitas</option>
+                    <option>El Paraíso</option>
+                    <option>La Reserva</option>
+                    <option>El Bosque Encantado</option>
+                    <option>Los Cerezos</option>
+                    <option>La Morada</option>
+                    <option>Las Palmas</option>
+                    <option>Los Alamos</option>
+                    <option>Los Cerezos</option>
+                </select>
+                <br><br>
+                <label for="direccion">Ingrese Manzana y Casa:</label>
+                <input type="text" id="direccion" name="direccion" required>
+                <br><br>
+                <label for="fecha_inicio">Fecha de Inicio dentro del horario de (ingresar, por ejemplo, "la
+                    noche"):</label>
+                <input type="date" id="fecha_inicio" name="fecha_inicio" required>
+                <br><br>
+                <label for="Honorario" style="color: #f73859;">Honorario estimado por hora de trabajo $1.500</label>
+                <br><br>
+
+                <button class="formRegistro--submit">
+                    Registrar
+                </button>
+            </form>
+        </div>
+
+        <br><br>
+
+        <p class="tyc">Términos y Condiciones:
+
+            Al enviar este formulario, confirmas que has leído y aceptas nuestros términos y condiciones de servicio.
+            Aceptas proporcionar información precisa y completa en este formulario.
+            Reconoces que cualquier información falsa o engañosa puede resultar en la cancelación o anulación del
+            servicio.
+            Privacidad de Datos:
+
+            Nos comprometemos a proteger tu privacidad y garantizar la confidencialidad de la información proporcionada
+            en
+            este formulario. Tus datos personales serán utilizados únicamente con el propósito de brindarte el servicio
+            solicitado.
+            Una vez que hayas completado el formulario, nuestro equipo revisará tu solicitud y nos pondremos en contacto
+            contigo lo antes posible para continuar con el proceso de contratación.
+
+            Si tienes alguna pregunta o necesitas asistencia adicional, no dudes en contactarnos a través de los medios
+            de
+            comunicación proporcionados en nuestra página web.
+
+            ¡Gracias por confiar en nuestros servicios!</p>
+
+        <br><br>
+
+        <div th:replace="/fragments/footer:: div"></div>
+
+        <script src="/js/footer.js"></script>
+
+</body>
+
+</html> -->

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/sidebar.css" />
+    <link rel="stylesheet" href="/css/cardAdmin.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <nav>
+        <div class="sidebar-top">
+          <span class="expand-btn">
+            <img src="/img/chevron.svg" alt="Chevron" />
+          </span>
+          <img
+            src="./img/egg solutions blanco.png"
+            class="logo"
+            alt="Laplace Logo"
+          />
+          <h3 class="hide">Panel Administrativo</h3>
+        </div>
+        <div class="sidebar-links">
+          <ul>
+            <li sec:authorize="hasRole('ADMIN')">
+              <a href="/admin/usuarios" class="active" title="Portfolio link">
+                <div class="icon">
+                  <img src="/img/portfolio.svg" title="Portfolio Icon" />
+                </div>
+                <span class="link hide">Usuarios</span>
+              </a>
+            </li>
+            <li sec:authorize="hasRole('ADMIN')">
+              <a href="/admin/proveedores" title="Analytics link">
+                <div class="icon">
+                  <img src="/img/analytics.svg" title="Analytics Icon" />
+                </div>
+                <span class="link hide">Proveedores</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#reports" title="Reports Link">
+                <div class="icon">
+                  <img src="/img/reports.svg" title="Reports Icon" />
+                </div>
+                <span class="link hide">Comentarios</span>
+              </a>
+            </li>
+            <li>
+              <a href="/logout" title="Reports Link">
+                <div class="icon">
+                  <img src="/img/desconectar.png" title="Reports Icon" />
+                </div>
+                <span class="link hide">Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="content">
+        <div class="box-container">
+          <div class="box-item">
+            <div class="flip-box">
+              <div
+                class="flip-box-front text-center"
+                style="background-image: url('./img/tech.jpg')"
+              >
+                <div class="inner color-white">
+                  <h3 class="flip-box-header">Un administrador nunca duerme</h3>
+                  <p class="admin">Bienvenido</p>
+                  <p class="admin" th:text="${session.usuariosession.nombre}">
+                    nombre
+                  </p>
+                  <p class="admin">al dashboard</p>
+                  <img
+                    src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png"
+                    alt=""
+                    class="flip-box-img"
+                  />
+                </div>
+              </div>
+              <div
+                class="flip-box-back text-center"
+                style="background-image: url('./img/tech.jpg')"
+              >
+                <div class="inner color-white">
+                  <h3 class="flip-box-header">Un administrador nunca duerme</h3>
+                  <p>Todo lo que necesitas al alcance de tú click</p>
+                  <button class="flip-box-button">Tú Perfil</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/sidebar.js"></script>
+  </body>
+</html>

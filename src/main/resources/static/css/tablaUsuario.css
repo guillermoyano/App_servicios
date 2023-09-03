@@ -1,0 +1,427 @@
+table {
+    font-family: sans-serif;
+    font-size: 20px;
+    max-height: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  
+  table th,
+  table td {
+    padding: 0.2em 0.2em;
+    text-align: center;
+    width: auto;
+  }
+  
+  table th:nth-child(2),
+  table td:nth-child(2) {
+    text-align: center;
+  }
+  
+  table td {
+    background-color: #a3a3a3;
+    width: auto;
+  }
+  
+  table th {
+    background-color: #2e4057;
+    color: #fff;
+    width: auto;
+  }
+  
+  .zigzag {
+    border-collapse: separate;
+    border-spacing: 0.2em 0.4em;
+    margin: 100px 150px 300px 150px;
+    width: auto;
+    background-color: #b7c9e5;
+  }
+  
+  .zigzag tbody tr:nth-child(odd) {
+    transform: rotate(0deg);
+  }
+  
+  .zigzag thead tr,
+  .zigzag tbody tr:nth-child(even) {
+    transform: rotate(-0deg);
+  }
+  
+  
+  
+  .botonm {
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: 0;
+    background-color: #031c30;
+    box-shadow: #b7c9e5;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 13px;
+    transition: all .5s ease;
+    color: #b7c9e5;
+  }
+  
+  .botonm:hover {
+    background-color: lightgreen;
+    color: #031c30;
+    box-shadow: lightgreen;
+  }
+  
+  .botonm:active {
+    background-color: lightgreen;
+    color: #031c30;
+    box-shadow: lightgreen;
+    transform: translateY(10px);
+    transition: 100ms;
+  }
+  
+  
+  .botond {
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: 0;
+    background-color: #031c30;
+    box-shadow: #b7c9e5;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 13px;
+    transition: all .5s ease;
+    color: #b7c9e5;
+  }
+  
+  .botond:hover {
+    background-color: lightsalmon;
+    color: #031c30;
+    box-shadow: lightsalmon;
+  }
+  
+  .botond:active {
+    background-color: lightsalmon;
+    color: #031c30;
+    box-shadow: lightsalmon;
+    transform: translateY(10px);
+    transition: 100ms;
+  }
+  
+  .botone {
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: 0;
+    background-color: #031c30;
+    box-shadow: #b7c9e5;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 13px;
+    transition: all .5s ease;
+    color: #b7c9e5;
+  }
+  
+  .botone:hover {
+    background-color: rgb(219, 91, 91);
+    color: #031c30;
+    box-shadow: rgb(219, 91, 91);
+  }
+  
+  .botone:active {
+    background-color: rgb(219, 91, 91);
+    color: #031c30;
+    box-shadow: rgb(219, 91, 91);
+    transform: translateY(10px);
+    transition: 100ms;
+  }
+  
+  .botonContrato {
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: 0;
+    background-color: #031c30;
+    box-shadow: #b7c9e5;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 13px;
+    transition: all .5s ease;
+    color: #b7c9e5;
+  }
+  
+  .botonContrato:hover {
+    background-color: lightgreen;
+    color: #031c30;
+    box-shadow: lightgreen;
+  }
+  
+  .botonContrato:active {
+    background-color: lightgreen;
+    color: #031c30;
+    box-shadow: lightgreen;
+    transform: translateY(10px);
+    transition: 100ms;
+  }
+  
+  .table-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: -50px;
+    margin-bottom: -50px;
+  
+  }
+  
+  @media all and (width <= 935px) {
+    .table-container  {
+      overflow-x: scroll;
+    }
+  }
+  
+  /* .rating {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 0 4px;
+      height: 40px;
+    }
+    
+    .rating-button {
+      appearance: none;
+      background: none;
+      outline: none;
+      border: none;
+      padding: 0;
+      height: 100%;
+      cursor: pointer;
+      --transition-delay: 0s;
+    }
+    
+    .rating--animatable .rating-button {
+      transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1) transform;
+    }
+    
+    .rating-button:active {
+      transform: scale(0.8);
+      color: yellow;
+    }
+    
+    .rating-button--active:active {
+      transform: scale(1.1);
+      color: yellow;
+    }
+    
+    .star {
+      transform: scale(0.5) rotate(0deg);
+      height: 100%;
+      color: var(--off-color);
+    }
+    
+    .rating--animatable .star {
+      transition: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) all;
+      transition-delay: var(--transition-delay);
+      
+    }
+    
+    .rating-button--active .star {
+      transform: scale(0.9) rotate(360deg);
+      color: var(--on-color);
+      color: yellow;
+    } */
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+  
+  }
+  
+  @media screen and (max-width: 600px) {
+    .modal-content {
+      width: 90%;
+    }
+  }
+  
+  .tablaCalificacion {
+    max-width: 400px;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  #openModal {
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: 0;
+    background-color: #031c30;
+    box-shadow: #b7c9e5;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 13px;
+    transition: all .5s ease;
+    color: #b7c9e5;
+  }
+  
+  #openModal:hover {
+    background-color: rgb(219, 91, 91);
+    color: #031c30;
+    box-shadow: rgb(219, 91, 91);
+  }
+  
+  #openModal:active {
+    background-color: rgb(219, 91, 91);
+    color: #031c30;
+    box-shadow: rgb(219, 91, 91);
+    transform: translateY(10px);
+    transition: 100ms;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  
+  .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.3rem;
+    --stroke: #666;
+    --fill: #ffc73a;
+  }
+  
+  .rating input {
+    appearance: unset;
+  }
+  
+  .rating label {
+    cursor: pointer;
+  }
+  
+  .rating svg {
+    width: 3rem;
+    height: 3rem;
+    overflow: visible;
+    fill: transparent;
+    stroke: var(--stroke);
+    stroke-linejoin: bevel;
+    stroke-dasharray: 12;
+    animation: idle 4s linear infinite;
+    transition: stroke 0.2s, fill 0.5s;
+  }
+  
+  @keyframes idle {
+    from {
+      stroke-dashoffset: 24;
+    }
+  }
+  
+  .rating label:hover svg {
+    stroke: var(--fill);
+  }
+  
+  .rating input:checked~label svg {
+    transition: 0s;
+    animation: idle 4s linear infinite, yippee 0.75s backwards;
+    fill: var(--fill);
+    stroke: var(--fill);
+    stroke-opacity: 0;
+    stroke-dasharray: 0;
+    stroke-linejoin: miter;
+    stroke-width: 8px;
+  }
+  
+  @keyframes yippee {
+    0% {
+      transform: scale(1);
+      fill: var(--fill);
+      fill-opacity: 0;
+      stroke-opacity: 1;
+      stroke: var(--stroke);
+      stroke-dasharray: 10;
+      stroke-width: 1px;
+      stroke-linejoin: bevel;
+    }
+  
+    30% {
+      transform: scale(0);
+      fill: var(--fill);
+      fill-opacity: 0;
+      stroke-opacity: 1;
+      stroke: var(--stroke);
+      stroke-dasharray: 10;
+      stroke-width: 1px;
+      stroke-linejoin: bevel;
+    }
+  
+    30.1% {
+      stroke: var(--fill);
+      stroke-dasharray: 0;
+      stroke-linejoin: miter;
+      stroke-width: 8px;
+    }
+  
+    60% {
+      transform: scale(1.2);
+      fill: var(--fill);
+    }
+  }
+  
+  #filtro {
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #filtro:focus {
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tabla-filtro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tabla-filtro #filtro {
+    margin: 510px;
+    margin-bottom: -50px;
+    margin-top: 50px;
+  }
+  
+  
+  @media screen and (max-width: 800px) {
+    .tabla-filtro {
+      overflow-x: scroll;
+    }
+  }
+  
+  

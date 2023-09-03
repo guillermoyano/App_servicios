@@ -1,0 +1,32 @@
+#filtro {
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#filtro:focus {
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tabla-filtro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tabla-filtro #filtro {
+    margin: 150px;
+    margin-bottom: 10px;
+    margin-top: 50px;
+}
+
+.tabla-filtro .zigzag {
+
+    margin-top: -10px;
+}
+

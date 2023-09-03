@@ -1,0 +1,67 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 240px);
+    grid-gap: 32px;
+    position: relative;
+    z-index: 1;
+  }
+  .cardErrorExito {
+    background-color: #000000;
+    box-shadow: 0px #5d5d5d;
+    padding: 56px 16px 16px 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: box-shadow 0.25s;
+  }
+  .cardErrorExito::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    background-color: #000000;
+  }
+  .cardErrorExito .icon {
+    z-index: 2;
+    position: relative;
+    display: table;
+    padding: 8px;
+  }
+  .cardErrorExito .icon::after {
+    content: '';
+    position: absolute;
+    inset: 4.5px;
+    border-radius: 50%;
+    background-color: #000000;
+    border: 1px solid #000000;
+    backdrop-filter: blur(2px);
+    transition: background-color 0.25s, border-color 0.25s;
+  }
+  .cardErrorExito .icon .iconoCard {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 44px;
+    height: 44px;
+    transform: translateZ(0);
+    color: var(--card-icon-color);
+    transition: color 0.25s;
+  }
+  .cardErrorExito .h4Card {
+    z-index: 2;
+    position: relative;
+    margin: 12px 0 4px 0;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 2;
+    color: #b7c4cf;
+  }
+  .cardErrorExito .parrafoCard {
+    z-index: 2;
+    position: relative;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #b7c4cf;
+  }

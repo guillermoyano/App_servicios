@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Usuario</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/registro.css">
+    <link rel="stylesheet" href="/css/cardExitoError.css">
+</head>
+
+<body>
+    <div th:replace="/fragments/casa:: div"></div>
+    <nav th:replace="/fragments/menu:: nav"></nav>
+
+
+    <div th:replace="/fragments/error:: div"></div>
+
+
+
+    <div class="section">
+        <div class="contenedorInput">
+            <div class="input__container input__container--variant" style="max-width: 150px; text-align: center;">
+                <div class="shadow__input shadow__input--variant"></div>
+                <a href="#seccion2"> <input type="text" name="text" class="input__search input__search--variant"
+                        placeholder="Registrate acá"></a>
+
+            </div>
+        </div>
+    </div>
+
+    <h2 class="fancy" style="--w: 50vw;--c: #f73859;--b:4px;--g: 40px">EGG SOLUTIONS</h2><br>
+
+    <div id="seccion2" class="contenedorNosotros">
+        <ul class="cartaUL">
+            <li style="list-style-type: none; font-size: 30px;">¡Bienvenido al registro de usuarios para nuestro
+                servicio!
+            </li>
+            <li style="list-style-type: none; font-size: 20px;">
+                Estamos encantados de que estés interesado en contratar nuestros servicios. Por favor, completa el
+                siguiente formulario para crear tu cuenta y comenzar a disfrutar de todas las ventajas que ofrecemos:
+            </li>
+        </ul>
+        <br>
+        <br><br>
+    </div>
+
+
+    <h2 class="fancy" style="--w: 50vw;--c: #f73859;--b:4px;--g: 40px">Registro</h2>
+
+    <div id="seccion2" class="contenedorregistro">
+        <br>
+        <form class="formRegistro" th:action="@{/registroUsuario}" method="POST" enctype="multipart/form-data">
+
+            <label class="palabrainput" style="font-size: 12px;" for="name">Nombre</label>
+            <input type="text" name="nombre" required placeholder="Nombre" class="formRegistro--input">
+            <label class="palabrainput" style="font-size: 12px;" for="name">Apellido</label>
+            <input type="text" name="apellido" required placeholder="Apellido" class="formRegistro--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="name">Correo electrónico</label>
+            <input type="email" name="email" required placeholder="Correo electrónico" class="formRegistro--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="name">Nombre de usuario</label>
+            <input type="text" name="usuario" required placeholder="Nombre de usuario" class="formRegistro--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="name">Número de DNI</label>
+            <input type="number" name="documento" required placeholder="Número de DNI" class="formRegistro--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="name">Número de Teléfono</label>
+            <input type="number" name="contactoTelefonico" required placeholder="Número de Teléfono" class="formRegistro--input">
+
+            <input hidden name="alta">
+
+            <input hidden name="rol" required placeholder="Rol" class="formRegistro--input" value="USER">
+
+            <label class="palabrainput" style="font-size: 12px;" for="tipo-juego">Disponibilidad horaria</label>
+            <select name="disponibilidadHoraria" id="tipo-juego" class="formRegistro--input" required
+                style="height: 40px; width: 73%;">
+                <option value="">Seleccione un horario</option>
+                <option value="mañana">Por la mañana</option>
+                <option value="tarde">Por la tarde</option>
+                <option value="noche">Por la noche</option>
+                <option value="todo el dia">Durante todo el día</option>
+            </select>
+            <div class="subirimagen">
+                <span class="subirimagen-title">Cargá una foto tuya</span>
+                <p class="subirimagen-paragraph">
+                    Solo formato .jpg
+                </p>
+                <label for="file-input" class="drop-container">
+                    <div id="image-preview-container">
+                        <img style="width: 150px; border-radius: 20px;" id="image-preview" src="/img/logousuario.png"
+                            alt="Vista previa de la imagen">
+                    </div>
+                    <input type="file" name="archivo" accept="image/*" id="file-input">
+                </label>
+            </div>
+            <label class="palabrainput" style="font-size: 12px;" for="name">Ingrese contraseña</label>
+            <input type="password" name="password" required placeholder="Ingrese contraseña"
+                class="formRegistro--input">
+                <label class="palabrainput" style="font-size: 12px;" for="password2">Repetir contraseña</label>
+            <input type="password" name="password2" required placeholder="Repetir contraseña"
+                class="formRegistro--input">
+
+            <button class="formRegistro--submit">
+                Registrar
+            </button>
+        </form>
+
+    </div>
+
+    <h2 class="fancy" style="--w: 50vw;--c: #f73859;--b:4px;--g: 40px">Reglamento</h2>
+
+    <div id="seccion2" class="contenedorregistro">
+
+        <ul class="cartaUL">
+            <li style="font-size: 16px;">Por favor, asegúrate de proporcionar información precisa y actualizada para
+                facilitar la comunicación y brindarte un servicio óptimo.</li>
+            <br><br>
+            <li style="font-size: 16px;">Al registrarte, aceptas nuestros términos y condiciones, así como nuestra
+                política de privacidad. También te comprometes a utilizar nuestros servicios de manera responsable y
+                respetar las normas establecidas.
+            </li>
+            <li style="font-size: 16px;">Una vez que hayas completado el registro, recibirás un correo electrónico
+                de
+                confirmación con los
+                detalles de tu cuenta. ¡Estaremos encantados de tenerte como parte de nuestra comunidad!</li>
+            <li style="font-size: 16px;">Si tienes alguna pregunta o necesitas asistencia durante el proceso de
+                registro, no
+                dudes en ponerte en
+                contacto con nuestro equipo de soporte a través de la información proporcionada en la sección de
+                contacto de nuestro sitio web.</li>
+            <li style="font-size: 16px;">Gracias por elegir nuestro servicio. ¡Esperamos brindarte una experiencia
+                excepcional!</li>
+        </ul>
+    </div>
+
+    <br><br>
+
+    
+    <div th:replace="/fragments/footer:: div"></div>
+    <script src="/js/verFotosRegistro.js"></script>
+
+
+
+</body>
+
+</html>

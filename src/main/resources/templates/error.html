@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/error.css">
+</head>
+
+<body>
+    <div class="contenedorNosotros">
+        <div id='oopss'>
+            <div id='error-text'>
+                <img src="https://cdn.rawgit.com/ahmedhosna95/upload/1731955f/sad404.svg" alt="404">
+                <span  th:text="'Error ' + ${codigo}"></span>
+                <p class="p-a" th:text="${mensaje}"> </p>
+                <p class="p-b" >Ups, parece que hubo un problema</p>
+                <a th:href="@{/}" class="back">Volver al inicio</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

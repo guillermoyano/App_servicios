@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>proveerdorList</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/filtro.css" />
+    <link rel="stylesheet" href="/css/sidebar.css" />
+  </head>
+
+  <body>
+    <div class="contenedor">
+      <nav>
+        <div class="sidebar-top">
+          <span class="expand-btn">
+            <img src="/img/chevron.svg" alt="Chevron" />
+          </span>
+          <img
+            src="/img/egg solutions blanco.png"
+            class="logo"
+            alt="Laplace Logo"
+          />
+          <h3 class="hide" style="white-space: nowrap">Panel Administrativo</h3>
+        </div>
+        <div class="sidebar-links">
+          <ul>
+            <li>
+              <a href="#analytics" title="Analytics link">
+                <div class="icon">
+                  <img src="/img/analytics.svg" title="Analytics Icon" />
+                </div>
+                <span class="link hide">Proveedores</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#reports" title="Reports Link">
+                <div class="icon">
+                  <img src="/img/reports.svg" title="Reports Icon" />
+                </div>
+                <span class="link hide">Comentarios</span>
+              </a>
+            </li>
+            <li>
+              <a href="/logout" title="Reports Link">
+                <div class="icon">
+                  <img src="/img/desconectar.png" title="Reports Icon" />
+                </div>
+                <span class="link hide">Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="contenedor2">
+        <div class="input-container">
+          <span class="titulo"> Listado de Usuarios </span>
+        </div>
+        <div class="tabla-filtro">
+          <input type="text" id="filtro" placeholder="Buscar..." />
+          <table class="zigzag">
+            <thead>
+              <tr>
+                <th class="header">Nombre</th>
+                <th class="header">Apellido</th>
+                <th class="header">e-mail</th>
+                <th class="header">Teléfono</th>
+                <th class="header">Documento</th>
+                <th class="header">Horario</th>
+                <th class="header">Estado</th>
+                <th class="header" style="width: auto">Foto Perfil</th>
+                <th class="header">Habilitar/Deshabilitar</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-body">
+              <tr th:each="usuario : ${usuarios}">
+                <td scope="row" th:text="${usuario.nombre}">Nombre</td>
+                <td th:text="${usuario.apellido}">Apellido</td>
+                <td th:text="${usuario.email}">e-mail</td>
+                <td th:text="${usuario.contactoTelefonico}">Teléfono</td>
+                <td th:text="${usuario.documento}">Documento</td>
+                <td th:text="${usuario.disponibilidadHoraria}">Horario</td>
+                <td th:text="${usuario.alta}">Estado</td>
+                <td>
+                  <div class="col-md-7">
+                    <img
+                      th:src="@{'/usuario/imagen/' + ${usuario.id}}"
+                      class="float-left ml-1"
+                      style="width: 100px"
+                    />
+                  </div>
+                </td>
+                <td>
+                  <button class="botond desactivar">
+                    <span class="btn-txtd">Activar/Desactivar</span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/filtro.js"></script>
+    <script src="/js/sidebar.js"></script>
+  </body>
+</html>

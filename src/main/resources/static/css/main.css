@@ -1,0 +1,382 @@
+.colores {
+    color: #2e4057;
+    color: #596b84;
+    color: #b7c9e5;
+    color: #f73859;
+    color: #a3a3a3;
+    color: #b7c4cf;
+    color: #adbac5;
+    color: #87949e;
+    color: #000000;
+    color: #5d5d5d;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    /* word-wrap: break-word !important; */
+    background: #b7c9e5;
+    box-sizing: border-box;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  a:visited {
+    text-decoration: none;
+  }
+  
+  /*---------------------------------------------------------------*/
+  /*------------------------Imagen CASA----------------------------*/
+  /*---------------------------------------------------------------*/
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .image-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /*---------------------------------------------------------------*/
+  /*-------------------------Buscador------------------------------*/
+  /*---------------------------------------------------------------*/
+  
+  .contenedorInput {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+  }
+  
+  .input__container--variant {
+    background: #000000;
+    border-radius: 30px;
+    max-width: 15em;
+    padding: 0.5em 0.5em;
+  }
+  
+  .shadow__input--variant {
+    filter: blur(25px);
+    border-radius: 30px;
+    background-color: #000000;
+    opacity: 0.5;
+    max-width: 15rem;
+  }
+  
+  .input__button__shadow--variant {
+    border-radius: 15px;
+    background-color: #000000;
+    width: 70%;
+    height: 30%;
+    border: none;
+  }
+  
+  .input__button__shadow--variant:hover {
+    background-color: #5d5d5d;
+  }
+  
+  .input__search--variant {
+    width: 13em;
+    align-items: center;
+    border-radius: 13em;
+    outline: none;
+    border: none;
+    padding: 0.8em;
+    font-size: 1.2em;
+    color: #000000;
+    background-color: transparent;
+    max-width: 15rem;
+  }
+  
+  .input__search--variant::placeholder {
+    color: #000000;
+    opacity: 0.8;
+  }
+  
+  .input__container--variant {
+    background: linear-gradient(to bottom, #f3fff9, #f3fff9);
+    border-radius: 1.5em;
+    max-width: 14em;
+    padding: 1em;
+    box-shadow: 0em 1em 3em #beecdc64;
+  }
+  
+  /*---------------------------------------------------------------*/
+  /*-------------------------Separadores---------------------------*/
+  /*---------------------------------------------------------------*/
+  
+  .fancy {
+    --b: 6px; /* control the border thickness */
+    --w: 50px; /* control the width of the line*/
+    --g: 15px; /* control the gap */
+    --c: #2e4057;
+  
+    width: fit-content;
+    padding: 0 1em;
+    line-height: 1.6em;
+    border: 1px solid;
+    color: #fff;
+    background: conic-gradient(from 45deg at left, var(--c) 25%, #0000 0) 0,
+      conic-gradient(from -135deg at right, var(--c) 25%, #0000 0) 100%;
+    background-size: 51% 100%;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    border-image: linear-gradient(
+        #0000 calc(50% - var(--b) / 2),
+        var(--c) 0 calc(50% + var(--b) / 2),
+        #0000 0
+      )
+      1/0 var(--w) / calc(var(--w) + var(--g));
+    margin-inline: auto;
+    font-family: "MiFuentecita", Arial, sans-serif;
+    letter-spacing: 8px;
+    word-spacing: 6px;
+  }
+  
+  .columnas {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .columna {
+    flex: 1 1 300px;
+    margin: 10px;
+    padding: 20px;
+    background-color: transparent;
+  }
+  
+  /*---------------------------------------------------------------*/
+  /*-------------------------Cómo funciona-------------------------*/
+  /*---------------------------------------------------------------*/
+  
+  @font-face {
+    font-family: "MiFuentecita";
+    src: url("../font/Louis\ George\ Cafe\ Bold.ttf");
+  }
+  
+  .contenedorNosotros {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    text-align: center;
+    font-family: "MiFuentecita", Arial, sans-serif;
+    letter-spacing: 3px;
+    word-spacing: 8px;
+  }
+  
+  .filaNosotros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    font-family: "MiFuentecita", Arial, sans-serif;
+    letter-spacing: 3px;
+    word-spacing: 8px;
+  }
+  
+  .columnaNosotros {
+    background-color: #b7c9e5;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -30px;
+  }
+  
+  .columnaNosotros img {
+    max-width: 100%;
+  }
+  
+  .columnaNosotros .h3Nosotros {
+    margin: 0;
+  }
+  
+  .columnaNosotros .pNosotros {
+    margin: 10px 0 0;
+  }
+  
+  /*---------------------------------------------------------------*/
+  /*------------------CARD experiencia de usuario------------------*/
+  /*---------------------------------------------------------------*/
+  
+  article {
+    --img-scale: 1.001;
+    --title-color: black;
+    --link-icon-translate: -20px;
+    --link-icon-opacity: 0;
+    position: relative;
+    border-radius: 16px;
+    box-shadow: none;
+    background: #fff;
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+  }
+  
+  article a::after {
+    position: absolute;
+    inset-block: 0;
+    inset-inline: 0;
+    cursor: pointer;
+    content: "";
+  }
+  
+  /* basic article elements styling */
+  article h2 {
+    margin: 0 0 18px 0;
+    font-family: "Bebas Neue", cursive;
+    font-size: 1.9rem;
+    letter-spacing: 0.06em;
+    color: var(--title-color);
+    transition: color 0.3s ease-out;
+  }
+  
+  figure {
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+  
+  article img {
+    max-width: 100%;
+    transform-origin: center;
+    transform: scale(var(--img-scale));
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .article-body {
+    padding: 24px;
+  }
+  
+  article a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #28666e;
+  }
+  
+  article a:focus {
+    outline: 1px dotted #28666e;
+  }
+  
+  article a .icon {
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+    transform: translateX(var(--link-icon-translate));
+    opacity: var(--link-icon-opacity);
+    transition: all 0.3s;
+  }
+  
+  /* using the has() relational pseudo selector to update our custom properties */
+  article:has(:hover, :focus) {
+    --img-scale: 1.1;
+    --title-color: #28666e;
+    --link-icon-translate: 0;
+    --link-icon-opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  }
+  
+  .articles {
+    display: grid;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  
+  .sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  
+  /*---------------------------------------------------------------*/
+  /*------------------INICIO - íconos botonos----------------------*/
+  /*---------------------------------------------------------------*/
+  
+  .section {
+    background-color: #b7c9e5;
+    padding: 20px;
+    padding-right: 40px;
+    padding-left: 40px;
+    text-align: center;
+  }
+  
+  .icon-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .icon-col {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .botonIcono {
+    border-radius: 30px;
+    width: 170px;
+    height: 140px;
+    border: 3px solid #000000;
+    color: #000000;
+    padding: 0.7em 1.7em;
+    background: #b7c9e5;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #b7c4cf;
+    text-decoration: none;
+  }
+  
+  .botonIcono a {
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  .botonIcono:hover {
+    border: 8px solid white;
+  }
+  
+  @media (max-width: 950px) {
+    .botonIcono {
+      border-radius: 30px;
+      width: 80px;
+      height: 140px;
+      border: 1px solid #000000;
+      font-size: 8px;
+      color: transparent;
+  }
+  .botonIcono:hover {
+    border: 2px solid white;
+  }
+  .botonIcono a {
+    color: transparent;
+    text-decoration: none;
+  }
+  }
+  
+  
+  
+  .botonIcono:active {
+    box-shadow: 4px 4px 12px #596b84, -4px -4px 12px white;
+  }
+  
+  .profesiones {
+    width: 60px;
+    gap: 10px;
+  }
+  

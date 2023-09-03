@@ -1,0 +1,125 @@
+@font-face {
+    font-family: "fontMenu";
+    src: url("../font/Myriad\ Pro\ Bold\ SemiExtended.ttf");
+  }
+  
+  .navbar {
+    padding-top: 19px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    font-family: "fontMenu", Arial, sans-serif;
+    background-color: #000000;
+    padding: 25px;
+    margin-top: -10px;
+  }
+  .vinculo {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    padding: 0 20px;
+    cursor: pointer;
+  }
+  .vinculin {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    padding: 0 20px;
+    cursor: pointer;
+    padding-top: 10px;
+  }
+  .vinculo:before,
+  .vinculo:after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background: #f73859;
+    transition: 0.5s;
+  }
+  .vinculo:after {
+    left: 0;
+    bottom: -10px;
+  }
+  .vinculo:before {
+    right: 0;
+    top: -10px;
+  }
+  .vinculo:hover:after,
+  .vinculo:hover:before {
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .menu {
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+    }
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      padding: 120px;
+      background-color: #000000;
+      max-height: 800px;
+    }
+    .navbar label {
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+    }
+  
+    .vinculo {
+      position: relative;
+      text-decoration: none;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      padding: 0 20px;
+      cursor: pointer;
+      margin-top: 17px;
+    }
+    .vinculin {
+      position: relative;
+      text-decoration: none;
+      padding: 0 20px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .vinculo:before,
+    .vinculo:after {
+      content: "";
+      position: absolute;
+      height: 3px;
+      width: 0;
+      background: #f73859;
+      transition: 0.5s;
+    }
+    .vinculo:after {
+      left: 0;
+      bottom: -10px;
+    }
+    .vinculo:before {
+      right: 0;
+      top: -10px;
+    }
+    .vinculo:hover:after,
+    .vinculo:hover:before {
+      width: 100%;
+    }
+  }
+  
+  .fotito {
+    width: 50px;
+    margin: 5px 15px 0 0;
+    vertical-align: middle;
+    border-radius: 10px;
+    height: 50px;
+    object-fit: cover;
+  }
+  

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Index</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/carrusel.css">
+</head>
+
+<body>
+    <div th:replace="/fragments/casa:: div"></div>
+    <nav th:replace="/fragments/menu:: nav"></nav>
+    <div th:replace="/fragments/exito:: div"></div>
+
+
+    <div class="section">
+        <div class="contenedorInput">
+            <div class="input__container input__container--variant">
+                <div class="shadow__input shadow__input--variant"></div>
+                <input type="text" name="text" class="input__search input__search--variant"
+                    placeholder="Buscar por rubro...">
+                <button class="input__button__shadow input__button__shadow--variant" style="width: 100%;">
+                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="1.5em" width="13em">
+                        <path
+                            d="M4 9a5 5 0 1110 0A5 5 0 014 9zm5-7a7 7 0 104.2 12.6.999.999 0 00.093.107l3 3a1 1 0 001.414-1.414l-3-3a.999.999 0 00-.107-.093A7 7 0 009 2z"
+                            fill-rule="evenodd" fill="#FFF"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="fancy" style="--w: 50vw;--c: #f73859;--b:4px;--g: 40px">Nosotros</h2><br>
+
+    <div class="contenedorNosotros">
+
+        <div class="columnaNosotros" style="font-size: 22px;">
+            <p>En Egg Solutions, nos enorgullece ofrecer servicios de alta calidad
+                para satisfacer las necesidades de nuestros clientes en Barrios privados
+                de distintas partes del país.
+                Con años de experiencia en el sector, nos hemos convertido
+                en el proveedor preferido para soluciones eléctricas, de gas y más.</p>
+        </div>
+        <div class="columnaNosotros" style="font-size: 22px;">
+            <p>
+            <p>Nuestra misión es brindar servicios excepcionales y superar
+                las expectativas de nuestros clientes en cada proyecto.
+                Nos esforzamos por proporcionar soluciones eficientes y
+                confiables, asegurando la comodidad y seguridad de su hogar
+                o negocio. Ya sea que necesite instalaciones eléctricas,
+                reparaciones de gas, servicios de fontanería o cualquier
+                otra necesidad relacionada, nuestro equipo altamente capacitado
+                está aquí para ayudarlo.</p>
+            </p>
+        </div>
+
+        <div class="filaNosotros" style="font-size: 20px;">
+            <div class="columnaNosotros">
+                <img src="./img/paso1.png" alt="Imagen 1">
+                <h3 class="h3Nosotros">1 - Dinos que
+                    necesitas</h3>
+                <p class="pNosotros">Cuéntanos sobre tu necesidad y nosotros lo pondremos a disposición de profesionales
+                    recomendados que
+                    te ayudarán a hacerlo realidad.</p>
+            </div>
+            <div class="columnaNosotros">
+                <img src="./img/paso2.png" alt="Imagen 1">
+                <h3 class="h3Nosotros">2 - Recibe
+                    multiples propuestas</h3>
+                <p class="pNosotros">En pocas horas recibirás las propuestas solicitadas. Conversa y evacúa dudas a
+                    través de nuestro
+                    chat. Compara reputación, experiencia y presupuestos.</p>
+            </div>
+            <div class="columnaNosotros">
+                <img src="./img/paso3.png" alt="Imagen 1">
+                <h3 class="h3Nosotros">3 - Elige</h3>
+                <p class="pNosotros">Cuando tengas toda la información, contrata de manera directa y abona sin
+                    intermediarios ni
+                    sobrecostos.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="fancy" style="--w: 50vw;--c: #f73859;--b:4px;--g: 40px">Nuestros servicios</h2>
+
+    <div class="slider" x-data="{start: true, end: false}">
+        <div class="slider__content" x-ref="slider"
+            x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
+            <div class="slider__item">
+                <img class="slider__image" src="./img/acordeonAireA.jpeg" alt="Image">
+                <div class="slider__info">
+                    <div class="sub-titulo">
+                        <button class="botonoS">
+                            <a href="./proveedor/lista/REFRIGERACION">
+                                <p>Aire Acondicionado</p>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+                <img class="slider__image" src="./img/acordeonAlbanil.jpg" alt="Image">
+                <div class="slider__info">
+                    <div class="sub-titulo">
+                        <button class="botonoS">
+                            <a href="./proveedor/lista/ALBANIL">
+                                <p>Albañilería</p>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+                <img class="slider__image" src="./img/acordeonArquitectos.jpeg" alt="Image">
+                <div class="slider__info">
+                    <div class="sub-titulo">
+                        <button class="botonoS">
+                            <a href="./proveedor/lista/ARQUITECTO">
+                                <p>Arquitectura</p>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+                <img class="slider__image" src="./img/acordeonCarpinteros.jpg" alt="Image">
+                <div class="slider__info">
+                    <div class="sub-titulo">
+                        <button class="botonoS">
+                            <a href="./proveedor/lista/CARPINTERO">
+                                <p>Carpintería</p>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+                <img class="slider__image" src="./img/acordeonElectricista.jpg" alt="Image">
+                <div class="slider__info">
+                    <div class="elemento__textual">
+                        <div class="sub-titulo">
+                            <button class="botonoS">
+                                <a href="./proveedor/lista/ELECTRICISTA">
+                                    <p>Electricidad</p>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+                <img class="slider__image" src="./img/acordeonGasistas.jpg" alt="Image">
+                <div class="slider__info">
+                    <div class="sub-titulo">
+                        <button class="botonoS">
+                            <a href="./proveedor/lista/GASISTA">
+                                <p>Gasista</p>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+                <img class="slider__image" src="./img/acordeonJardineros.jpg" alt="Image">
+                <div class="slider__info">
+                    <div class="sub-titulo">
+                        <button class="botonoS">
+                            <a href="./proveedor/lista/JARDINERO">
+                                <p>Jardinería</p>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+                <img class="slider__image" src="./img/acordeonMecanicos.png" alt="Image">
+                <div class="slider__info">
+                    <div class="sub-titulo">
+                        <button class="botonoS">
+                            <a href="./proveedor/lista/MECANICO">
+                                <p>Mecánica</p>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+                <img class="slider__image" src="./img/acordeonPlomeros.jpg" alt="Image">
+                <div class="slider__info">
+                    <div class="sub-titulo">
+                        <button class="botonoS">
+                            <a href="./proveedor/lista/PLOMERO">
+                                <p>Plomería</p>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider__nav">
+            <button class="slider__nav__button"
+                x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth * -1, behavior: 'smooth'});"
+                x-bind:class="start ? '' : 'slider__nav__button--active'">Anterior</button>
+            <button class="slider__nav__button"
+                x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth, behavior: 'smooth'});"
+                x-bind:class="end ? '' : 'slider__nav__button--active'">Siguiente</button>
+        </div>
+    </div>
+
+    <h2 class="fancy" style="--w: 50vw;--c: #f73859;--b:4px;--g: 40px">Experiencia de usuarios</h2>
+    <br><br><br>
+    <section class="articles">
+        <article>
+            <div class="article-wrapper">
+                <figure>
+                    <img src="https://picsum.photos/id/1011/800/450" alt="" />
+                </figure>
+                <div class="article-body">
+                    <h2>Comentarios y votos de usuarios</h2>
+                    <p>
+                        Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit
+                        amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis
+                        enim imperdiet egestas.
+                    </p>
+                    <a href="#" class="read-more">
+                        Read more <span class="sr-only">about this is some title</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <div class="article-wrapper">
+                <figure>
+                    <img src="https://picsum.photos/id/1005/800/450" alt="" />
+                </figure>
+                <div class="article-body">
+                    <h2>Comentarios y votos de usuarios</h2>
+                    <p>
+                        Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit
+                        amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis
+                        enim imperdiet egestas.
+                    </p>
+                    <a href="#" class="read-more">
+                        Read more <span class="sr-only">about this is some title</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <div class="article-wrapper">
+                <figure>
+                    <img src="https://picsum.photos/id/103/800/450" alt="" />
+                </figure>
+                <div class="article-body">
+                    <h2>Comentarios y votos de usuarios</h2>
+                    <p>
+                        Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit
+                        amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis
+                        enim imperdiet egestas.
+                    </p>
+                    <a href="#" class="read-more">
+                        Read more <span class="sr-only">about this is some title</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </section>
+    <br><br><br>
+
+    <div th:replace="/fragments/footer:: div"></div>
+
+    <script src="./js/carrusel.js"></script>
+
+</body>
+
+</html>

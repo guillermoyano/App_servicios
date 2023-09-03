@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Proveedor</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/registro.css">
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+
+<body>
+
+    <div th:replace="/fragments/casa:: div"></div>
+    <nav th:replace="/fragments/menu:: nav"></nav>
+    <!-- <div th:replace="/fragments/menu:: div"></div> -->
+
+    <div class="contenedorForm">
+        <form class="form" th:action="@{/logincheck}" method="POST">
+            <p class="form-title">ENTRÁ A TÚ CUENTA</p>
+            <div class="input-container">
+                <input class="form-input" id="txt-input" type="text" placeholder="Email" name="email" required>
+                <span>
+                    <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                            stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+                    </svg>
+                </span>
+            </div>
+            <div class="input-container">
+                <input class="form-input" type="password" placeholder="Password" id="pwd" name="password" required>
+                <span id="eye-icon" onclick="togglePasswordVisibility()">
+                    <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-width="2" stroke-linejoin="round"
+                            stroke-linecap="round"></path>
+                        <path
+                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                            stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+                    </svg>
+                </span>
+            </div>
+            <button class="submit" type="submit">
+                Logueate
+            </button>
+            <p class="signup-link">
+                No tenés cuenta?
+                <a href="#seccion3">Creala acá</a>
+            </p>
+        </form>        
+    </div>
+
+    <h2 class="fancy" style="--w: 50vw;--c: #f73859;--b:4px;--g: 40px">EGG SOLUTION</h2><br>
+
+    <div id="seccion2" class="contenedorNosotros">
+        <ul class="cartaUL">
+            <li style="list-style-type: none; font-size: 30px;">Te enviaremos
+                consultas de potenciales clientes,
+                ayudandote como profesional
+                independiente a crecer tu negocios de servicios</li>
+            <li style="visibility: hidden;">Ganarás más dinero ampliando tu cartera de clientes</li>
+            <li style="font-size: 20px;">Te vincularemos con personas con necesidad de mantenimiento y reparación para
+                sus
+                hogares
+            </li>
+            <li style="font-size: 20px;">Ganarás más dinero ampliando tu cartera de clientes</li>
+            <li style="font-size: 20px;">Ocuparás los tiempos libres</li>
+            <li style="font-size: 20px;">Evitarás las épocas de poco trabajo</li>
+            <li style="font-size: 20px;">Tendrás una vidriera online para mostrar</li>
+            <br><br>
+            <li style="font-size: 28px; color: #f73859">¡TODO AL MENOR PRECIO POR TRABAJO DEL MERCADO Y EN LOS BARRIOS
+                PRIVADOS MÁS COTIZADOS!</li>
+        </ul>
+        <br><br><br>
+        <div class="filaNosotros" style="font-size: 20px;">
+            <div class="columnaNosotros">
+                <img src="./img/pasos-01.png" alt="Imagen 1">
+                <h3 class="h3Nosotros">1 - Te vinculamos</h3>
+                <p class="pNosotros">El cliente genera una solicitud de servicio.
+                    EggSolution selecciona e invita a profesionales específicos
+                    a cotizar, quienes pueden aceptar o rechazar el pedido.</p>
+            </div>
+            <div class="columnaNosotros">
+                <img src="./img/pasos-02.png" alt="Imagen 1">
+                <h3 class="h3Nosotros">2 - Contratación directa</h3>
+                <p class="pNosotros">El profesional se vincula directamente con el cliente y ofrece una cotización.
+                    En promedio se solicitan 3 propuestas por consulta.
+                    El cliente elige al prestador que más le convence y programa el trabajo.</p>
+            </div>
+            <div class="columnaNosotros">
+                <img src="./img/pasos-03.png" alt="Imagen 1">
+                <h3 class="h3Nosotros">3 - Tu negocio crece</h3>
+                <p class="pNosotros">CAl finalizar el trabajo, el cliente paga directamente al profesional
+                    y lo califica por el servicio brindado.
+                    Mientras mejor reputación tenga el profesional, más trabajos recibe ¡Listo!</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="fancy" id="seccion3" style="--w: 50vw;--c: #f73859;--b:4px;--g: 40px">Registro</h2>
+
+    <div class="contenedorregistro">
+        <br>
+        <form class="formRegistro" th:action="@{/registroProveedor}" method="POST" enctype="multipart/form-data">
+            <label class="palabrainput" style="font-size: 12px;" for="nombre">Nombre</label>
+            <input type="text" name="nombre" required placeholder="Nombre" class="formRegistro--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="apellido">Apellido</label>
+            <input type="text" name="apellido" required placeholder="Apellido" class="formRegistro--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="email">Correo electrónico</label>
+            <input type="email" name="email" required placeholder="Correo electrónico" class="formRegistro--input">
+
+            <input type="hidden" name="rol" required placeholder="Rol" class="formRegistro--input" value="PROVEEDOR">
+
+            <label class="palabrainput" style="font-size: 12px;" for="usuario">Nombre de usuario</label>
+            <input type="text" name="usuario" required placeholder="Nombre de usuario" class="formRegistro--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="documento">Número de DNI</label>
+            <input type="number" name="documento" required placeholder="Número de DNI" class="formRegistro--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="contactoTelefonico">Número de Teléfono</label>
+            <input type="number" name="contactoTelefonico" required placeholder="Número de Teléfono"
+                class="formRegistro--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="certificado">Certificación</label>
+            <select name="certificado" class="formRegistro--input" required style="height: 40px; width: 73%;">
+                <option disabled selected>Seleccione una opción</option>
+                <option value="true">Estoy matriculado</option>
+                <option value="false">no estoy matriculado</option>
+            </select>
+
+            <label class="palabrainput" style="font-size: 12px;" for="disponibilidadHoraria">Disponibilidad
+                horaria</label>
+            <select name="disponibilidadHoraria" class="formRegistro--input" required style="height: 40px; width: 73%;">
+                <option disabled selected>Seleccione un horario</option>
+                <option value="manana">Por la mañana</option>
+                <option value="tarde">Por la tarde</option>
+                <option value="noche">Por la noche</option>
+                <option value="todo-el-dia">Durante todo el día</option>
+            </select>
+
+            <label class="palabrainput" style="font-size: 12px;" for="profesion">Profesión</label>
+            <select name="profesion" class="formRegistro--input" style="height: 40px; width: 73%;">
+                <option disabled selected>Seleccione una profesión</option>
+                <option value="REFRIGERACION">Técnico de aire acondicionado</option>
+                <option value="ALBANIL">Albañil</option>
+                <option value="ARQUITECTO">Arquitecto</option>
+                <option value="CARPINTERO">Carpintero</option>
+                <option value="ELECTRICISTA">Electricista</option>
+                <option value="GASISTA">Gasista</option>
+                <option value="JARDINERO">Jardinero</option>
+                <option value="MECANICO">Mecánico</option>
+                <option value="PINTOR">Pintor</option>
+                <option value="PLOMERO">Plomero</option>
+            </select>
+
+            <div class="subirimagen">
+                <span class="subirimagen-title">Cargá una foto tuya</span>
+                <p class="subirimagen-paragraph">
+                    Solo formato .jpg
+                </p>
+                <label for="archivot" class="drop-container">
+                    <div id="image-preview-container">
+                        <img style="width: 150px; border-radius: 20px;" id="image-preview" src="/img/logousuario.png"
+                            alt="Vista previa de la imagen">
+                    </div>
+                    <input name="archivo" type="file" accept="image/*" id="file-input">
+                </label>
+            </div>
+
+            <label class="palabrainput" style="font-size: 12px;" for="password">Ingrese contraseña</label>
+            <input type="password" name="password" required placeholder="Ingrese contraseña"
+                class="formRegistro--input">
+
+            <label class="palabrainput" style="font-size: 12px;" for="password2">Repetir contraseña</label>
+            <input type="password" name="password2" required placeholder="Repetir contraseña"
+                class="formRegistro--input">
+
+            <button class="formRegistro--submit">
+                Registrar
+            </button>
+        </form>
+    </div>
+
+    <div th:replace="/fragments/footer:: div"></div>
+    
+    <script src="/js/verFotosRegistro.js"></script>
+    <script src="/js/verPass.js"></script>
+</body>
+
+</html>
