@@ -104,7 +104,7 @@ public class ProveedorControlador {
 
     @PostMapping("/modificacionPerfil/{id}")
     public String modificacionPerfil(@PathVariable Integer id, @RequestParam String nombre, @RequestParam String apellido, @RequestParam String email, @RequestParam String usuario, @RequestParam String documento, @RequestParam(required = false) MultipartFile archivo, @RequestParam String password, String password2 , Profesion profesion, Boolean certificado, String contactoTelefonico, String disponibilidadHoraria,
-            Boolean alta, ModelMap modelo, RedirectAttributes redireccion) throws Exception, Object{
+            Boolean alta, ModelMap modelo, RedirectAttributes redireccion) throws Exception{
 
         try {
 

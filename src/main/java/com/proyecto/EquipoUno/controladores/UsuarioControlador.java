@@ -62,10 +62,9 @@ public class UsuarioControlador {
     public String modificacionPerfil(@PathVariable Integer id, @RequestParam String nombre, @RequestParam String apellido,
             @RequestParam String email, @RequestParam String usuario, @RequestParam String documento, @RequestParam(required = false) MultipartFile archivo,
             @RequestParam (required=false) String password,  @RequestParam (required=false) String password2, @RequestParam Rol rol, String contactoTelefonico, String disponibilidadHoraria,
-            Boolean alta, ModelMap modelo, RedirectAttributes redireccion) throws Exception, Object {
+            Boolean alta, ModelMap modelo, RedirectAttributes redireccion) throws Exception{
 
         try {
-
             usuarioServicio.modificarUsuario(id, nombre, apellido, usuario, documento, archivo, email, password, contactoTelefonico, disponibilidadHoraria);
             modelo.put("exito", "usuario modificado con exito");
         } catch (Exception ex) {

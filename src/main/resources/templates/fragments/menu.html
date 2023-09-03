@@ -1,0 +1,9 @@
+<nav class="navbar">
+    <a class="vinculin"><img style="width: 80px;" src="/img/egg solutions blanco.png" alt=""></a>
+    <a class="vinculo" th:href="@{/}">Home</a>
+    <a class="vinculo" th:if="${session.usuariosession == null}" th:href="@{/login}">Logueate</a>
+    <a class="vinculo" th:if="${session.usuariosession == null}" th:href="@{/registrarUsuario}">Registrate</a>
+    <a class="vinculo" th:if="${session.usuariosession != null}">Perfil</a>
+    <a class="vinculo" th:if="${session.usuariosession == null}" href="/registrarProveedor" style="white-space:nowrap">Sos proveedor?</a>
+    <a class="vinculo" th:if="${session.usuariosession != null}" href="/logout">Logout</a>
+</nav>
